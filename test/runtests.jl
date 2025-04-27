@@ -1,5 +1,5 @@
 using Test
-using ON_Operas
+using ONOperas
 using DataFrames
 
 @testset "Basic scrape" begin
