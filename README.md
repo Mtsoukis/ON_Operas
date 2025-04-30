@@ -21,14 +21,14 @@ Pkg.add("ONOperas")
 ```julia
 using ONOperas
 
-# Example URL: Greek operas from 1821 to 2012
-url = ["https://exhibits.stanford.edu/operadata/catalog?f%5Bcountry_ssim%5D%5B%5D=Greece&per_page=24&range%5Bpub_year_tisim%5D%5Bbegin%5D=1821&range%5Bpub_year_tisim%5D%5Bend%5D=2021&sort=pub_year_isi+asc%2C+title_sort+asc"]
+# Example URL: Greek operas from 1821 to 2013. Enter the URL from the Stanford Opening Nights! Database
+url = ["https://exhibits.stanford.edu/operadata/catalog?per_page=24&sort=pub_year_isi+desc%2C+title_sort+asc&exhibit_id=operadata&f%5Bcountry_ssim%5D%5B%5D=Greece&range%5Bpub_year_tisim%5D%5Bbegin%5D=1821&range%5Bpub_year_tisim%5D%5Bend%5D=2013"]
 
-# Load all Operas to DataFrame
+# Load all Operas to DataFrame, note that you have to manually input a page number. To scrape all Operas, enter number in bottom of screen. If in doubt, just put very high number- this will scrape all operas too; with small efficiency losses. 
 df = scrape_operas(url; pages=7)
 
 # Scrape and save to CSV
-df = scrape_operas([url]; pages=1, save_to="data/greece_operas.csv")
+df = scrape_operas([url]; pages=100, save_to="data/greece_operas.csv")
 ```
 
 The returned `df` is a `DataFrame` with the following columns:
@@ -67,4 +67,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 **Author:** Marios Tsoukis (<mt5656@nyu.edu>)
-
