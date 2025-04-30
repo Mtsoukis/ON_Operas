@@ -1,7 +1,5 @@
 # ONOperas
 
-# ONOperas.jl
-
 A Julia package to scrape and format a CSV of opera premieres from **Opening Night! Opera & Oratorio Premieres**, compiled by Stanford University Libraries- with permission. 
 
 ---
